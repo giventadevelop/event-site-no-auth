@@ -182,7 +182,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                         text-base lg:text-base font-medium tracking-wide
                         px-3 py-2 mx-1
                         transition-all duration-300 ease-in-out
-                        focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+                        focus:outline-none
                         ${
                           item.active
                             ? 'text-blue-400 font-semibold border-b-2 border-blue-400'
