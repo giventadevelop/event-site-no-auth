@@ -27,6 +27,8 @@ export default function CharityWebsite() {
       <TestimonialsSection />
       <EventsSection />
       <BrandSection />
+      {/* Spacer section for clear separation before footer */}
+      <div className="py-24 bg-white"></div>
     </main>
   );
 }
