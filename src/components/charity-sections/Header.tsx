@@ -218,7 +218,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                                 block px-4 py-2 mx-1 rounded-lg
                                 text-sm font-medium text-blue-400 tracking-[0.025em]
                                 hover:text-blue-500 hover:font-semibold
-                                focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white
+                                focus:outline-none
                                 transition-all duration-300 ease-in-out
                               "
                               onClick={(e) => handleSmoothScroll(e, subItem.href)}
