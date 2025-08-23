@@ -134,8 +134,8 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
           <div className="flex items-center justify-between h-20">
             {/* Left side - Grid button and Logo */}
             <div className="flex items-center space-x-4">
-              <button 
-                aria-label="Open side panel" 
+              <button
+                aria-label="Open side panel"
                 className="
                   hidden lg:flex items-center justify-center
                   w-11 h-11 min-w-[44px] min-h-[44px]
@@ -144,7 +144,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                   bg-transparent hover:bg-gray-50 active:bg-gray-100
                   border-2 border-transparent hover:border-gray-200 active:border-blue-300
                   rounded-xl
-                  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+                  focus:outline-none
                   transition-all duration-300 ease-in-out
                   hover:scale-105 active:scale-98
                   hover:shadow-sm active:shadow-md
