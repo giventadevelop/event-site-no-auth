@@ -425,11 +425,10 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                         font-inter text-base font-medium tracking-[0.025em]
                         focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
                         transition-all duration-300 ease-in-out
-                        active:scale-98 active:transition-transform active:duration-150
                         ${
                           item.active
-                            ? 'text-blue-600 font-semibold bg-blue-50 border-l-4 border-blue-600'
-                            : 'text-gray-600 font-medium hover:text-gray-900 hover:bg-gray-50 hover:font-semibold'
+                            ? 'text-blue-400 font-semibold border-l-4 border-blue-400'
+                            : 'text-blue-400 font-medium hover:text-blue-500 hover:font-semibold border-l-4 border-transparent hover:border-blue-400'
                         }
                       `}
                       onClick={(e) => {
