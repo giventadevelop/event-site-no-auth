@@ -24,7 +24,9 @@ export default function CharityThemeLayout({
       {/* Independent layout wrapper */}
       <div className="charity-theme-layout">
         <Header variant="charity" />
-        {children}
+        <div className="px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
         <Footer />
       </div>
     </>
