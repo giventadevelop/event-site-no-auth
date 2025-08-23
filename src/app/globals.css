@@ -125,6 +125,37 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* Enhanced donate button styles */
+.border-3 {
+  border-width: 3px;
+}
+
+/* Custom pulse animation for donate button */
+@keyframes donate-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+.animate-donate-pulse {
+  animation: donate-pulse 2s infinite;
+}
+
+/* Shimmer effect for donate button */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
 .hero-section {
   position: relative;
   min-height: 60vh;
