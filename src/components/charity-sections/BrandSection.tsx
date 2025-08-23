@@ -4,7 +4,7 @@ import React from 'react';
 
 const BrandSection: React.FC = () => {
   return (
-    <div className="py-32 bg-gradient-to-br from-blue-700 to-blue-900 text-white relative overflow-hidden text-center">
+    <div className="py-32 pb-48 bg-gradient-to-br from-blue-700 to-blue-900 text-white relative overflow-hidden text-center">
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-30"
