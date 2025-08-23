@@ -329,12 +329,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-          style={{
-            '@media (max-width: 640px)': {
-              width: '909px'
-            }
-          } as React.CSSProperties}
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden w-[909px] sm:w-full"
           onClick={closeMobileMenu}
         />
       )}
