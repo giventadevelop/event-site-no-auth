@@ -369,10 +369,9 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                           flex items-center justify-between w-full text-left
                           font-inter text-base font-medium tracking-[0.025em]
                           py-4 px-4 min-h-[44px] rounded-xl
-                          text-gray-600 hover:text-gray-900 hover:bg-gray-50 hover:font-semibold
+                          text-blue-400 hover:text-blue-500 hover:font-semibold
                           focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
                           transition-all duration-300 ease-in-out
-                          active:scale-98 active:transition-transform active:duration-150
                         "
                         aria-expanded={openDropdowns.has(item.name)}
                         aria-label={`Toggle ${item.name} submenu`}
