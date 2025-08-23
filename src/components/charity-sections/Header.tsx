@@ -331,10 +331,8 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
           style={{
-            '@media (max-width: 640px)': {
-              width: '909px'
-            }
-          } as any}
+            width: window.innerWidth <= 640 ? '909px' : 'auto'
+          }}
           onClick={closeMobileMenu}
         />
       )}
