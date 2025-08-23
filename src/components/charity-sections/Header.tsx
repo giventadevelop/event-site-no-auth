@@ -450,7 +450,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                       className={`
                         block py-4 px-4 min-h-[44px] rounded-xl
                         font-inter text-base font-medium tracking-[0.025em]
-                        focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+                        focus:outline-none
                         transition-all duration-300 ease-in-out
                         ${
                           item.active
