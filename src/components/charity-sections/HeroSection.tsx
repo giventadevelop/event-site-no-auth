@@ -27,11 +27,11 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Grid Layout - 3 cells with soft translucent effects */}
-        <div className="grid grid-cols-2 gap-8 h-full min-h-[400px]">
+        {/* Grid Layout - Responsive: 1 column on mobile/tablet, 2 columns on desktop */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full min-h-[400px]">
 
-          {/* Cell 1: Logo with Soft Background (Top Left) */}
-          <div className="relative overflow-hidden group">
+          {/* Cell 1: Logo with Soft Background */}
+          <div className="relative overflow-hidden group min-h-[300px]">
             {/* Translucent background with soft edges */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gray-100/60 backdrop-blur-sm rounded-[2rem] shadow-lg shadow-gray-200/50"></div>
             <div
@@ -44,19 +44,19 @@ const HeroSection: React.FC = () => {
 
             <div className="relative z-10 p-8 h-full flex items-center justify-center">
               <div className="text-center">
-                <div className="bg-white/90 hero-soft-blur hero-translucent-border p-6 rounded-2xl">
+                <div className="bg-white/90 hero-soft-blur hero-translucent-border p-8 rounded-2xl">
                   <Image
-                    src="/images/charity-theme/logo_black.png"
-                    alt="Malayalees US Logo"
-                    width={160}
-                    height={64}
-                    className="mx-auto mb-3"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2Fd7543f582d4f477599d341da96d48e2b?format=webp&width=800"
+                    alt="Malayalees Friends Logo"
+                    width={240}
+                    height={240}
+                    className="mx-auto mb-4"
                     priority
                   />
-                  <h2 className="text-lg font-semibold text-gray-800">
-                    Malayalees US
+                  <h2 className="text-xl font-bold text-gray-800">
+                    Malayalees Friends
                   </h2>
-                  <p className="text-sm text-gray-600 mt-1">
+                  <p className="text-base text-gray-600 mt-2">
                     Cultural Events Federation
                   </p>
                 </div>
@@ -64,8 +64,8 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Cell 2: Large Modern Image (Right - spans 2 rows) */}
-          <div className="relative overflow-hidden row-span-2 group">
+          {/* Cell 2: Large Modern Image (spans 2 rows on desktop, single row on mobile) */}
+          <div className="relative overflow-hidden lg:row-span-2 group min-h-[400px]">
             {/* Soft translucent container */}
             <div
               className="absolute inset-0 rounded-[2rem]"
