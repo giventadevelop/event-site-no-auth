@@ -399,11 +399,10 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                               href={subItem.href}
                               className="
                                 block py-3 px-4 min-h-[44px] rounded-lg
-                                font-inter text-sm font-medium text-gray-600 tracking-[0.025em]
-                                hover:text-gray-900 hover:bg-gray-50 hover:font-semibold
+                                font-inter text-sm font-medium text-blue-400 tracking-[0.025em]
+                                hover:text-blue-500 hover:font-semibold
                                 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
                                 transition-all duration-300 ease-in-out
-                                active:scale-98 active:transition-transform active:duration-150
                               "
                               onClick={(e) => {
                                 closeMobileMenu();
