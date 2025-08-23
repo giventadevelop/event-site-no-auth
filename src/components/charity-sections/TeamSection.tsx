@@ -73,19 +73,24 @@ const TeamSection: React.FC = () => {
                 animationDelay: `${index * 150}ms`
               }}
             >
-              {/* Large Photo Section */}
-              <div className="relative h-[400px] lg:h-[450px] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent z-10"></div>
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+              {/* Large Photo Section with Head Visibility */}
+              <div className="relative h-[400px] lg:h-[450px] overflow-hidden p-4">
+                <div className="relative w-full h-full rounded-xl overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent z-10"></div>
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{
+                      objectPosition: 'center top'
+                    }}
+                  />
 
-                {/* Subtle overlay for better photo quality */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5"></div>
+                  {/* Subtle overlay for better photo quality */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5 rounded-xl"></div>
+                </div>
               </div>
 
               {/* Modern Card Content Below Photo */}
