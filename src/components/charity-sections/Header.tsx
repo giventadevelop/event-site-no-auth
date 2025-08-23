@@ -236,7 +236,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
               </nav>
             )}
 
-            {/* Right side - Search and Donate */}
+            {/* Right side - Search */}
             <div className="flex items-center space-x-4">
               <button
                 aria-label="Search"
