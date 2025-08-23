@@ -328,13 +328,33 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-          style={{
-            width: window.innerWidth <= 640 ? '909px' : 'auto'
-          }}
-          onClick={closeMobileMenu}
-        />
+        <>
+          <style jsx>{`
+            .mobile-overlay {
+              position: fixed;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background-color: rgba(0, 0, 0, 0.5);
+              z-index: 40;
+            }
+            @media (max-width: 640px) {
+              .mobile-overlay {
+                width: 909px;
+              }
+            }
+            @media (min-width: 1024px) {
+              .mobile-overlay {
+                display: none;
+              }
+            }
+          `}</style>
+          <div
+            className="mobile-overlay"
+            onClick={closeMobileMenu}
+          />
+        </>
       )}
 
       {/* Mobile Menu Sidebar */}
