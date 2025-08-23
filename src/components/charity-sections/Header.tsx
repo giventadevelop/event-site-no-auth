@@ -428,7 +428,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                                 block py-3 px-4 min-h-[44px] rounded-lg
                                 font-inter text-sm font-medium text-blue-400 tracking-[0.025em]
                                 hover:text-blue-500 hover:font-semibold
-                                focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+                                focus:outline-none
                                 transition-all duration-300 ease-in-out
                               "
                               onClick={(e) => {
