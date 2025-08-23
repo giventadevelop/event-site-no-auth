@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
 
             <div className="relative z-10 p-8 h-full flex items-center justify-center">
               <div className="text-center">
-                <div className="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+                <div className="bg-white/90 hero-soft-blur hero-translucent-border p-6 rounded-2xl">
                   <Image
                     src="/images/charity-theme/logo_black.png"
                     alt="Malayalees US Logo"
