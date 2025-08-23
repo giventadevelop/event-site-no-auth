@@ -279,7 +279,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                   bg-transparent hover:bg-gray-50 active:bg-gray-100
                   border-2 border-transparent hover:border-gray-200 active:border-blue-300
                   rounded-xl
-                  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+                  focus:outline-none
                   transition-all duration-300 ease-in-out
                   hover:scale-105 active:scale-98
                   hover:shadow-sm active:shadow-md
