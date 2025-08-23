@@ -1,4 +1,4 @@
-import { auth } from '@clerk/nextjs'
+// No authentication required
 import { db } from '@/lib/db'
 import { ClientComponent } from '@/components/client-component'
 
@@ -13,11 +13,9 @@ export default async function Page({
   params,
   searchParams,
 }: PageProps) {
-  const { userId } = auth()
+  const userId = 'guest-user' // Mock user ID for templates
 
-  if (!userId) {
-    return null
-  }
+  // No authentication check needed
 
   // Fetch data from your database
   const data = await db.YOUR_MODEL.findMany({

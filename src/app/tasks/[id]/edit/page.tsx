@@ -1,4 +1,3 @@
-import { auth } from '@clerk/nextjs'
 import { TaskForm } from '@/components/task-form'
 import { notFound } from 'next/navigation'
 
@@ -7,12 +6,6 @@ interface EditTaskPageProps {
 }
 
 export default async function EditTaskPage(props: EditTaskPageProps) {
-  const { userId } = auth()
-
-  if (!userId) {
-    return null
-  }
-
   // Await params for Next.js 15+ compatibility
   const resolvedParams = typeof props.params.then === 'function' ? await props.params : props.params;
 

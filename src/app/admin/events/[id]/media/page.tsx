@@ -1,6 +1,5 @@
 import { fetchUserProfileServer, fetchMediaServer, fetchOfficialDocsServer } from './ApiServerActions';
 import { fetchEventDetailsServer } from '@/app/admin/ApiServerActions';
-import { auth } from '@clerk/nextjs/server';
 import { MediaClientPage } from './MediaClientPage';
 
 interface UploadMediaPageProps { params: { id: string } }
@@ -11,16 +10,10 @@ export default async function UploadMediaPage({ params }: UploadMediaPageProps) 
   const mediaList = eventId ? await fetchMediaServer(eventId) : [];
   const eventDetails = eventId ? await fetchEventDetailsServer(eventId) : null;
   const officialDocsList = eventId ? await fetchOfficialDocsServer(eventId) : [];
-  const { userId } = await auth();
-  let userProfileId = null;
-  if (userId) {
-    try {
-      const profile = await fetchUserProfileServer(userId);
-      userProfileId = profile?.id ?? null;
-    } catch {
-      userProfileId = null;
-    }
-  }
+
+  // Since no authentication is required, we can use a mock userProfileId
+  const userProfileId = 1;
+
   return (
     <MediaClientPage
       eventId={eventId}

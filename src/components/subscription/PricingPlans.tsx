@@ -4,11 +4,20 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import type { UserSubscriptionDTO } from '@/types';
 import { Button } from '@/components/ui/button';
-import { useAuth, useUser } from '@clerk/nextjs';
-import { storeSubscriptionPlans } from '@/config/subscriptions';
 import Link from 'next/link';
 
-const PRO_PLAN = storeSubscriptionPlans[0];
+const PRO_PLAN = {
+  name: 'Pro Plan',
+  price: 19.99,
+  features: [
+    'Unlimited access to all features',
+    'Advanced analytics',
+    'Custom reports',
+    'Priority support',
+    'Data export',
+  ],
+  stripePriceId: 'price_1234567890abcdef1234567890abcdef', // Placeholder, replace with actual
+};
 
 interface PricingPlansProps {
   currentSubscription: UserSubscriptionDTO | null;
@@ -19,25 +28,22 @@ export function PricingPlans({ currentSubscription }: PricingPlansProps) {
   const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const { userId } = useAuth();
-  const { user } = useUser();
 
   // Check if user just logged in and needs to subscribe
   useEffect(() => {
     const shouldSubscribe = searchParams?.get('subscribe') === 'true';
-    if (userId && shouldSubscribe && !currentSubscription) {
+    if (shouldSubscribe && !currentSubscription) {
       handleSubscribe();
     }
-  }, [userId, searchParams]);
+  }, [searchParams]);
 
   const handleSubscribe = async (eventId = 1) => {
     try {
       setIsLoading(true);
       setError(null);
 
-      if (!userId || !user?.emailAddresses?.[0]?.emailAddress) {
-        throw new Error('User information not available');
-      }
+      // Since no authentication is required, we can use a mock user
+      const mockUserEmail = 'guest@example.com';
 
       if (!PRO_PLAN.stripePriceId) {
         throw new Error('Subscription configuration error. Please contact support.');
@@ -88,7 +94,7 @@ export function PricingPlans({ currentSubscription }: PricingPlansProps) {
       setIsLoading(true);
       setError(null);
 
-      if (!currentSubscription?.stripeSubscriptionId || !userId || !user?.emailAddresses?.[0]?.emailAddress) {
+      if (!currentSubscription?.stripeSubscriptionId) {
         throw new Error('Required information not available');
       }
 
@@ -129,7 +135,7 @@ export function PricingPlans({ currentSubscription }: PricingPlansProps) {
       setIsLoading(true);
       setError(null);
 
-      if (!currentSubscription?.stripeSubscriptionId || !userId) {
+      if (!currentSubscription?.stripeSubscriptionId) {
         throw new Error('Required information not available');
       }
 
@@ -175,17 +181,18 @@ export function PricingPlans({ currentSubscription }: PricingPlansProps) {
           {PRO_PLAN.features.map((feature) => (
             <li key={feature} className="flex items-center">
               <svg
-                className="w-5 h-5 text-[#39E079] mr-3"
-                fill="none"
-                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
+                fill="none"
+                stroke="#39E079"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-5 h-5 mr-3"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path d="M20 6 9 17l-5-5" />
               </svg>
               {feature}
             </li>
@@ -202,7 +209,7 @@ export function PricingPlans({ currentSubscription }: PricingPlansProps) {
           </div>
         )}
         <div className="space-y-4">
-          {!userId ? (
+          {!currentSubscription ? (
             <>
               <Link
                 href={{

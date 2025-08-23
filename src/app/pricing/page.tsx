@@ -1,4 +1,3 @@
-import { auth, currentUser } from "@clerk/nextjs";
 import { Metadata } from 'next';
 import { PricingPlans } from '@/components/subscription/PricingPlans';
 import { redirect } from 'next/navigation';
@@ -61,17 +60,10 @@ export default async function PricingPage(props: any) {
     const sessionId = searchParams?.session_id;
     const isReturnFromStripe = Boolean(success === 'true' || sessionId);
 
-    // Initialize auth at runtime
-    const session = await auth();
-    const userId = session?.userId;
-    const clerkUser = await currentUser();
+    // Since no authentication is required, we can use a mock user
+    const userId = 'guest-user';
+    const mockEmail = 'guest@example.com';
 
-    if (!userId || !clerkUser?.emailAddresses?.[0]?.emailAddress) {
-      // Only redirect if not signed in
-      redirect('/sign-in');
-    }
-
-    const email = clerkUser.emailAddresses[0].emailAddress;
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
     if (!baseUrl) {

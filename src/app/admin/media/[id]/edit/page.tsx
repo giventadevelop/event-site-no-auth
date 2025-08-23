@@ -4,7 +4,6 @@ import { useRouter, useParams } from "next/navigation";
 import type { EventMediaDTO } from "@/types";
 import { format } from 'date-fns-tz';
 import { eventMediaService } from "../../../../../../services/eventMediaService";
-import { useAuth } from "@clerk/nextjs";
 import type { UserProfileDTO } from "@/types";
 import { FaUsers, FaPhotoVideo, FaCalendarAlt } from 'react-icons/fa';
 import Link from "next/link";
@@ -17,24 +16,7 @@ export default function EditMediaPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [userProfileId, setUserProfileId] = useState<number | null>(null);
-  const { userId } = useAuth();
-
-  useEffect(() => {
-    async function fetchProfile() {
-      if (!userId) return;
-      try {
-        const res = await fetch(`/api/proxy/user-profiles/by-user/${userId}`);
-        if (res.ok) {
-          const profile: UserProfileDTO = await res.json();
-          setUserProfileId(profile.id ?? null);
-        }
-      } catch {
-        setUserProfileId(null);
-      }
-    }
-    fetchProfile();
-  }, [userId]);
+  const [userProfileId, setUserProfileId] = useState<number | null>(1); // Mock user profile ID
 
   useEffect(() => {
     async function fetchMedia() {

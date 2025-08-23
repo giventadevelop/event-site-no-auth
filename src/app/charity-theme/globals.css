@@ -1,0 +1,261 @@
+/* Charity Theme Route - Independent Styles */
+/* This file contains styles specific to the charity-theme route */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Epilogue:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Route-specific CSS variables */
+:root {
+  --charity-primary: #2563eb;
+  --charity-secondary: #1e40af;
+  --charity-accent: #f59e0b;
+  --charity-success: #10b981;
+  --charity-warning: #f59e0b;
+  --charity-error: #ef4444;
+  --charity-text: #1f2937;
+  --charity-text-light: #6b7280;
+  --charity-bg: #ffffff;
+  --charity-bg-secondary: #f9fafb;
+  --charity-border: #e5e7eb;
+}
+
+/* Dark mode variables */
+.dark {
+  --charity-primary: #3b82f6;
+  --charity-secondary: #60a5fa;
+  --charity-accent: #fbbf24;
+  --charity-success: #34d399;
+  --charity-warning: #fbbf24;
+  --charity-error: #f87171;
+  --charity-text: #f9fafb;
+  --charity-text-light: #d1d5db;
+  --charity-bg: #111827;
+  --charity-bg-secondary: #1f2937;
+  --charity-border: #374151;
+}
+
+/* Route-specific layout wrapper */
+.charity-theme-layout {
+  font-family: 'Sora', 'Epilogue', 'Inter', sans-serif;
+  color: var(--charity-text);
+  background-color: var(--charity-bg);
+  min-height: 100vh;
+}
+
+/* Route-specific component styles */
+.charity-theme-layout main {
+  width: 100%;
+  overflow-x: hidden;
+  padding-top: 80px; /* Account for fixed header height */
+}
+
+/* Header-specific styles */
+.charity-theme-layout .header {
+  font-family: 'Sora', 'Epilogue', 'Inter', sans-serif;
+}
+
+/* Smooth scroll behavior for internal navigation */
+.charity-theme-layout {
+  scroll-behavior: smooth;
+}
+
+/* Dropdown animation improvements */
+.charity-theme-layout .group:hover .group-hover\:opacity-100 {
+  transition-delay: 100ms;
+}
+
+/* Mobile menu smooth transitions */
+.charity-theme-layout .mobile-menu-enter {
+  transform: translateX(100%);
+}
+
+.charity-theme-layout .mobile-menu-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.charity-theme-layout .mobile-menu-exit {
+  transform: translateX(0);
+}
+
+.charity-theme-layout .mobile-menu-exit-active {
+  transform: translateX(100%);
+  transition: transform 300ms ease-in-out;
+}
+
+/* Inter font utility class */
+.charity-theme-layout .font-inter {
+  font-family: 'Inter', 'Sora', 'Epilogue', sans-serif;
+}
+
+/* Enhanced focus states for accessibility */
+.charity-theme-layout *:focus-visible {
+  outline: 2px solid var(--charity-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scale animations */
+.charity-theme-layout .hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.charity-theme-layout .active\:scale-98:active {
+  transform: scale(0.98);
+}
+
+/* Menu item hover transitions */
+.charity-theme-layout .menu-item-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button interaction enhancements */
+.charity-theme-layout .touch-manipulation {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Enhanced button hover states */
+.charity-theme-layout button:hover {
+  cursor: pointer;
+}
+
+.charity-theme-layout button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Hamburger and icon button specific styling */
+.charity-theme-layout .icon-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.charity-theme-layout .icon-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.charity-theme-layout .icon-button:active::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer-specific enhancements */
+.charity-theme-layout footer {
+  font-family: 'Inter', 'Sora', 'Epilogue', sans-serif;
+}
+
+/* Footer link hover animations */
+.charity-theme-layout footer nav a {
+  position: relative;
+  display: inline-block;
+}
+
+.charity-theme-layout footer nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+
+.charity-theme-layout footer nav a:hover::after {
+  width: 100%;
+}
+
+/* Back-to-top button enhanced styling */
+.charity-theme-layout .back-to-top-button {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Social media icons enhanced hover effects */
+.charity-theme-layout footer .social-icon {
+  position: relative;
+  overflow: hidden;
+}
+
+.charity-theme-layout footer .social-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.charity-theme-layout footer .social-icon:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Tablet-specific responsive behavior */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .charity-theme-layout nav {
+    /* Reduce spacing for tablet */
+    gap: 0.5rem;
+  }
+  
+  .charity-theme-layout .header-nav-item {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+  
+  /* Adjust button sizes for tablet */
+  .charity-theme-layout button {
+    min-width: 42px;
+    min-height: 42px;
+  }
+  
+  /* Footer tablet adjustments */
+  .charity-theme-layout footer {
+    padding: 1rem;
+  }
+}
+
+/* Responsive design for charity theme */
+@media (max-width: 768px) {
+  .charity-theme-layout {
+    /* Mobile-specific styles */
+    padding: 0;
+  }
+  
+  .charity-theme-layout main {
+    padding-top: 60px; /* Reduced header height on mobile */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .charity-theme-layout {
+    /* Tablet-specific styles */
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .charity-theme-layout {
+    /* Desktop-specific styles */
+    padding: 0 2rem;
+  }
+}

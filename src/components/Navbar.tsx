@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { UserButton } from '@clerk/nextjs';
 
 export function Navbar() {
   return (
@@ -22,7 +21,12 @@ export function Navbar() {
             </div>
           </div>
           <div className="flex items-center">
-            <UserButton afterSignOutUrl="/" />
+            <Link
+              href="/profile"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-900 hover:text-gray-700"
+            >
+              Profile
+            </Link>
           </div>
         </div>
       </div>

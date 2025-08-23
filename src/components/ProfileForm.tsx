@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth, useUser } from "@clerk/nextjs";
-import { UserProfileDTO } from "@/types";
+import type { UserProfileDTO } from "@/types";
 import { getTenantId } from '@/lib/env';
 
 type UserProfileFormData = Omit<UserProfileDTO, 'createdAt' | 'updatedAt' | 'id'> & { id?: number; emailUnsubscribed?: boolean; isEmailSubscribed?: boolean };
@@ -57,8 +56,6 @@ interface ProfileFormProps {
 
 export default function ProfileForm({ initialProfile }: ProfileFormProps) {
   const router = useRouter();
-  const { userId } = useAuth();
-  const { user } = useUser();
 
   const [loading, setLoading] = useState(false);
   const [initialLoading, setInitialLoading] = useState(!initialProfile);
@@ -107,10 +104,8 @@ export default function ProfileForm({ initialProfile }: ProfileFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!userId) {
-      console.debug('No userId available, cannot submit form');
-      return;
-    }
+    // Since no authentication is required, we can use a mock userId
+    const mockUserId = 'guest-user';
 
     setLoading(true);
     setError(null);
@@ -129,7 +124,7 @@ export default function ProfileForm({ initialProfile }: ProfileFormProps) {
         // Create new profile
         result = await createUserProfileAction({
           ...formData,
-          userId,
+          userId: mockUserId,
           userRole: 'MEMBER',
           userStatus: 'PENDING_APPROVAL',
         });

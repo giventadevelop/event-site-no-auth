@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useAuth } from '@clerk/nextjs'
+// No authentication required
 
 interface COMPONENT_NAMEProps {
   // Add your props here
@@ -10,7 +10,7 @@ interface COMPONENT_NAMEProps {
 export function COMPONENT_NAME({
   // Add your props here
 }: COMPONENT_NAMEProps) {
-  const { userId } = useAuth()
+  const userId = 'guest-user' // Mock user ID for templates
   const [state, setState] = useState()
 
   // Add your event handlers here

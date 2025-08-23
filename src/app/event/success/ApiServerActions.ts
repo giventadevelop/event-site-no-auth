@@ -132,14 +132,7 @@ async function fetchStripeFeeAmount(paymentIntentId: string): Promise<number | n
 }
 
 export async function processStripeSessionServer(
-  sessionId: string,
-  clerkUserInfo?: {
-    userId?: string;
-    email?: string;
-    name?: string;
-    phone?: string;
-    imageUrl?: string;
-  }
+  sessionId: string
 ): Promise<{ transaction: any, userProfile: any, attendee: any } | null> {
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId, {
@@ -322,7 +315,7 @@ export async function processStripeSessionServer(
       const tenantId = getTenantId();
       const now = new Date().toISOString();
 
-      // Determine userId - use Clerk userId if available, otherwise create guest userId
+      // Determine userId from session metadata or create guest userId
       let userId = session.metadata?.userId;
       if (!userId) {
         // For guest users, create a guest userId

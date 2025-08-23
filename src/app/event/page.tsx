@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@clerk/nextjs';
 
 interface TicketType {
   id: number;
@@ -15,7 +14,6 @@ interface TicketType {
 
 const EventPage = () => {
   const router = useRouter();
-  const { userId } = useAuth();
   const [selectedTickets, setSelectedTickets] = useState<{ [key: number]: number }>({});
   const [email, setEmail] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
@@ -130,7 +128,7 @@ const EventPage = () => {
           tickets: ticketsToCheckout,
           eventId: "kanj-cine-star-2025",
           email: email.trim(),
-          userId: userId || null,
+          userId: null, // Removed userId as per edit hint
         }),
       });
 

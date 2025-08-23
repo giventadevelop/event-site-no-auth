@@ -2,7 +2,6 @@
 
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import { getTenantId } from "@/lib/env";
 import type { EventDetailsDTO, EventMediaDTO, EventAttendeeDTO, EventAttendeeGuestDTO, UserProfileDTO } from "@/types";
@@ -13,8 +12,6 @@ import LocationDisplay from '@/components/LocationDisplay';
 export default function EventRegisterPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const eventId = Number(id);
-  const { userId } = useAuth();
-  const { user } = useUser();
   const router = useRouter();
 
   // State for event details and media
@@ -61,35 +58,12 @@ export default function EventRegisterPage({ params }: { params: Promise<{ id: st
   // Prepopulate attendee fields from user profile if logged in
   useEffect(() => {
     async function fetchProfile() {
-      if (!userId) return;
-      setLoadingProfile(true);
-      try {
-        const res = await fetch(`/api/proxy/user-profiles/by-user/${userId}?tenantId.equals=${getTenantId()}`);
-        if (res.ok) {
-          const profile: UserProfileDTO = await res.json();
-          setAttendee((prev) => ({
-            ...prev,
-            firstName: profile.firstName || user?.firstName || "",
-            lastName: profile.lastName || user?.lastName || "",
-            email: profile.email || user?.primaryEmailAddress?.emailAddress || "",
-            phone: profile.phone || user?.phoneNumbers?.[0]?.phoneNumber || "",
-            attendeeId: profile.id,
-          }));
-        } else if (user) {
-          setAttendee((prev) => ({
-            ...prev,
-            firstName: user.firstName || "",
-            lastName: user.lastName || "",
-            email: user.primaryEmailAddress?.emailAddress || "",
-            phone: user.phoneNumbers?.[0]?.phoneNumber || "",
-          }));
-        }
-      } catch { }
+      // Since no authentication is required, we can skip profile fetching
       setLoadingProfile(false);
     }
     fetchProfile();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId, user]);
+  }, []);
 
   // Handle attendee field changes
   const handleAttendeeChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

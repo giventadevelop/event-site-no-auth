@@ -1,15 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs';
-import { z } from 'zod';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
+import { z } from 'zod';
 
-// Validation schema for task updates
+// Define the update task schema
 const updateTaskSchema = z.object({
-  title: z.string().min(1, 'Title is required').max(100).optional(),
-  description: z.string().max(500).optional(),
-  priority: z.enum(['low', 'medium', 'high']).optional(),
-  dueDate: z.string().datetime().optional(),
+  title: z.string().min(1),
+  description: z.string().optional(),
   status: z.enum(['pending', 'in_progress', 'completed']).optional(),
+  priority: z.enum(['low', 'medium', 'high']).optional(),
+  dueDate: z.string().optional(),
 });
 
 export async function GET(
@@ -17,11 +16,6 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const { userId } = auth();
-    if (!userId) {
-      return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     return NextResponse.json({ error: 'Not implemented' }, { status: 501 });
   } catch (error) {
     if (error instanceof PrismaClientKnownRequestError) {
@@ -45,11 +39,6 @@ export async function PUT(
   { params }: { params: { id: string } }
 ) {
   try {
-    const { userId } = auth();
-    if (!userId) {
-      return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const body = await request.json();
 
     // Validate request body
@@ -93,11 +82,6 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    const { userId } = auth();
-    if (!userId) {
-      return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     return NextResponse.json({ error: 'Not implemented' }, { status: 501 });
   } catch (error) {
     if (error instanceof PrismaClientKnownRequestError) {

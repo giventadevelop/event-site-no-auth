@@ -11,7 +11,7 @@ interface CartItem {
 
 export async function createStripeCheckoutSession(
   cart: CartItem[],
-  user: { email: string; userId?: string; phone?: string; clerkUserId?: string; clerkEmail?: string; clerkName?: string; clerkPhone?: string; clerkImageUrl?: string },
+  user: { email: string; userId?: string; phone?: string },
   discountCodeId: number | null | undefined,
   eventId: number
 ) {

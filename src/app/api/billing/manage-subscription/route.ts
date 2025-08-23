@@ -1,31 +1,13 @@
-import { NextResponse } from 'next/server';
-import { auth, currentUser } from '@clerk/nextjs';
-import Stripe from 'stripe';
-import type { UserProfileDTO, UserSubscriptionDTO } from '@/types';
+import { NextRequest, NextResponse } from 'next/server';
+import { getStripe } from '@/lib/stripe/init';
 import { getAppUrl } from '@/lib/env';
-
-// Force Node.js runtime - Edge runtime is not compatible with Prisma
-export const runtime = 'nodejs';
-
-// Initialize Stripe lazily to prevent build-time errors
-const getStripe = () => {
-  const secretKey = process.env.STRIPE_SECRET_KEY;
-  if (!secretKey) {
-    throw new Error('STRIPE_SECRET_KEY is not configured');
-  }
-  return new Stripe(secretKey, {
-    apiVersion: '2023-10-16' as Stripe.LatestApiVersion,
-  });
-};
+import type { UserProfileDTO, UserSubscriptionDTO } from '@/types';
 
 export async function POST(req: Request) {
   try {
-    const { userId } = auth();
+    // Since no authentication is required, we can use a mock userId
+    const userId = 'guest-user';
     const stripe = getStripe(); // Initialize Stripe only when needed
-
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized - Please sign in' }, { status: 401 });
-    }
 
     // Get base URL from environment or request
     let baseUrl = getAppUrl();
@@ -48,15 +30,8 @@ export async function POST(req: Request) {
     }
 
     try {
-      const clerkUser = await currentUser();
-      if (!clerkUser?.emailAddresses?.[0]?.emailAddress) {
-        return NextResponse.json(
-          { error: 'User email not found - Please update your email in profile' },
-          { status: 400 }
-        );
-      }
-
-      const email = clerkUser.emailAddresses[0].emailAddress;
+      // Since no authentication is required, we can use a mock email
+      const email = 'guest@example.com';
 
       // Try to get existing user profile via proxy
       let userProfile: UserProfileDTO | null = null;

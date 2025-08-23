@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs';
 import { z } from 'zod';
 import type { UserTaskDTO } from '@/types';
 import { getAppUrl } from '@/lib/env';
@@ -12,21 +11,13 @@ if (!API_BASE_URL) {
   throw new Error('API base URL not configured');
 }
 
-// Validation schema for task creation and update
+// Define the create task schema
 const createTaskSchema = z.object({
   title: z.string().min(1, 'Title is required').max(100),
   description: z.string().max(500).optional(),
-  priority: z.enum(['low', 'medium', 'high']).default('medium'),
-  dueDate: z.string().refine(
-    (val) => {
-      if (!val) return false;
-      const isoDateTime = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})?$/;
-      const isoDate = /^\d{4}-\d{2}-\d{2}$/;
-      return isoDateTime.test(val) || isoDate.test(val);
-    },
-    { message: 'Invalid date or datetime format' }
-  ),
   status: z.enum(['pending', 'in_progress', 'completed']).default('pending'),
+  priority: z.enum(['low', 'medium', 'high']).default('medium'),
+  dueDate: z.string().datetime().optional(),
   eventId: z.number().optional(),
   assigneeName: z.string().max(255).optional(),
   assigneeContactPhone: z.string().max(50).optional(),
@@ -35,9 +26,8 @@ const createTaskSchema = z.object({
 const updateTaskSchema = createTaskSchema.partial();
 
 function getUserId() {
-  const { userId } = auth();
-  if (!userId) throw new Error('Unauthorized');
-  return userId;
+  // Since no authentication is required, we can use a mock userId
+  return 'guest-user';
 }
 
 function applyFilters(tasks: UserTaskDTO[], searchParams: URLSearchParams): UserTaskDTO[] {

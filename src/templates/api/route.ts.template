@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server';
-import { auth } from '@clerk/nextjs';
+// No authentication required
 import { db } from '@/lib/db';
 import { z } from 'zod';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
@@ -11,10 +11,8 @@ const schema = z.object({
 
 export async function GET(request: NextRequest) {
   try {
-    const { userId } = auth();
-    if (!userId) {
-      return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const userId = 'guest-user'; // Mock user ID for templates
+    // No authentication check needed
 
     // Add your GET logic here
     const result = await db.YOUR_MODEL.findMany({
@@ -41,10 +39,8 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { userId } = auth();
-    if (!userId) {
-      return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const userId = 'guest-user'; // Mock user ID for templates
+    // No authentication check needed
 
     const body = await request.json();
     const validatedData = schema.parse(body);

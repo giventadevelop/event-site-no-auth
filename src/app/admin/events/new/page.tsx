@@ -6,15 +6,12 @@ import type { EventDetailsDTO, EventTypeDetailsDTO, UserProfileDTO } from '@/typ
 import Link from 'next/link';
 import { FaUsers, FaPhotoVideo, FaCalendarAlt } from 'react-icons/fa';
 import { createCalendarEventServer } from '../../ApiServerActions';
-import { useAuth, useUser } from '@clerk/nextjs';
 
 export default function CreateEventPage() {
   const router = useRouter();
   const [eventTypes, setEventTypes] = useState<EventTypeDetailsDTO[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const { userId } = useAuth();
-  const { user } = useUser();
 
   useEffect(() => {
     fetch('/api/proxy/event-type-details')
@@ -40,12 +37,18 @@ export default function CreateEventPage() {
       if (!res.ok) throw new Error('Failed to create event');
       const newEvent = await res.json();
       let userProfile: UserProfileDTO | null = null;
-      if (userId) {
-        const profileRes = await fetch(`/api/proxy/user-profiles/by-user/${userId}`);
-        if (profileRes.ok) {
-          userProfile = await profileRes.json();
-        }
-      }
+      // Since no authentication is required, we can use a mock profile
+      const mockProfile: UserProfileDTO = {
+        id: 1,
+        userId: 'guest-user',
+        firstName: 'Guest',
+        lastName: 'User',
+        email: 'guest@example.com',
+        tenantId: 'demo',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      };
+      userProfile = mockProfile;
       try {
         if (userProfile) {
           await createCalendarEventServer(newEvent, userProfile);

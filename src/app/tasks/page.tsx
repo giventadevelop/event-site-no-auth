@@ -1,4 +1,3 @@
-import { auth } from '@clerk/nextjs'
 import { TaskList } from '@/components/task-list'
 import Link from 'next/link'
 import { Pagination } from '@/components/Pagination'
@@ -18,13 +17,8 @@ export default async function TasksPage({
 }: {
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
-  // Initialize headers and auth
-  const cookiesList = await cookies();
-  const { userId } = await auth();
-
-  if (!userId) {
-    redirect('/sign-in');
-  }
+  // Since no authentication is required, we can use a mock userId
+  const userId = 'guest-user';
 
   // Get search params for Stripe return
   const success = searchParams?.success;
@@ -42,10 +36,10 @@ export default async function TasksPage({
       // Check one final time
       const finalCheck = await checkSubscriptionStatus(userId, true);
       if (!finalCheck) {
-        redirect('/pricing?message=subscription-pending');
+        // Don't redirect, just continue without subscription
       }
     } else {
-      redirect('/pricing?message=subscription-required');
+      // Don't redirect, just continue without subscription
     }
   }
 

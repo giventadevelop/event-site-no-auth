@@ -2,10 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useAuth } from "@clerk/nextjs";
-import { UserButton } from "@clerk/nextjs";
-import { useState, useEffect } from "react";
-import { useUser } from "@clerk/nextjs";
+import { useState } from "react";
 
 const menuItems = [
   { href: "/", label: "Home" },
@@ -32,40 +29,13 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
   }
 };
 
-const ORG_NAME = "Adwiise";
-
 type HeaderProps = {
   hideMenuItems?: boolean;
 };
 
 export function Header({ hideMenuItems = false }: HeaderProps) {
   const pathname = usePathname();
-  const { userId } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, isLoaded: userLoaded } = useUser();
-  const [isAdmin, setIsAdmin] = useState(false);
-
-  useEffect(() => {
-    async function checkAdminInOrg() {
-      if (!userLoaded || !user) {
-        setIsAdmin(false);
-        return;
-      }
-      try {
-        const memberships = await user.getOrganizationMemberships();
-        const targetOrgMembership = memberships.find(
-          (membership: any) => membership.organization.name === ORG_NAME
-        );
-        setIsAdmin(
-          targetOrgMembership?.role === 'org:admin' ||
-          targetOrgMembership?.role === 'admin'
-        );
-      } catch {
-        setIsAdmin(false);
-      }
-    }
-    checkAdminInOrg();
-  }, [user, userLoaded]);
 
   return (
     <header className="bg-transparent" style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000, background: 'rgba(0,0,0,0.95)', backdropFilter: 'blur(5px)' }}>
@@ -123,42 +93,6 @@ export function Header({ hideMenuItems = false }: HeaderProps) {
                 {item.label}
               </Link>
             ))}
-            {!userId ? (
-              <>
-                <Link
-                  href="/sign-in"
-                  className="text-yellow-300 hover:text-yellow-100 px-3 py-2 rounded-md text-sm font-bold"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/sign-up"
-                  className="bg-yellow-400 text-black px-4 py-2 rounded-md text-sm font-bold hover:bg-yellow-300"
-                >
-                  Sign Up
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/profile"
-                  className={`text-yellow-300 hover:text-yellow-100 px-3 py-2 rounded-md text-sm font-bold ${pathname === "/profile" ? "text-yellow-100" : ""
-                    }`}
-                >
-                  Profile
-                </Link>
-                {/* Admin menu item */}
-                {isAdmin && (
-                  <Link
-                    href="/admin"
-                    className={`text-yellow-300 hover:text-yellow-100 px-3 py-2 rounded-md text-sm font-bold ${pathname === "/admin" ? "text-yellow-100" : ""}`}
-                  >
-                    Admin
-                  </Link>
-                )}
-                <UserButton afterSignOutUrl="/" />
-              </>
-            )}
           </div>
         </div>
 
@@ -178,48 +112,6 @@ export function Header({ hideMenuItems = false }: HeaderProps) {
               {item.label}
             </Link>
           ))}
-          {!userId ? (
-            <>
-              <Link
-                href="/sign-in"
-                className="block text-yellow-300 hover:text-yellow-100 px-3 py-2 rounded-md text-base font-bold"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/sign-up"
-                className="block bg-yellow-400 text-black px-3 py-2 rounded-md text-base font-bold hover:bg-yellow-300 mt-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sign Up
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link
-                href="/profile"
-                className={`block text-yellow-300 hover:text-yellow-100 px-3 py-2 rounded-md text-base font-bold ${pathname === "/profile" ? "text-yellow-100 bg-gray-800" : ""
-                  }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Profile
-              </Link>
-              {/* Admin menu item for mobile */}
-              {isAdmin && (
-                <Link
-                  href="/admin"
-                  className={`block text-yellow-300 hover:text-yellow-100 px-3 py-2 rounded-md text-base font-bold ${pathname === "/admin" ? "text-yellow-100 bg-gray-800" : ""}`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Admin
-                </Link>
-              )}
-              <div className="px-3 py-2">
-                <UserButton afterSignOutUrl="/" />
-              </div>
-            </>
-          )}
         </div>
       </nav>
     </header>

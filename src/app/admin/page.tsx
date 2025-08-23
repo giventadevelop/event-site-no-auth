@@ -1,11 +1,11 @@
 'use client';
-import { EventDetailsDTO, EventTypeDetailsDTO, UserProfileDTO, EventCalendarEntryDTO } from '@/types';
-import React, { useState, useEffect } from 'react';
-import { EventList } from '@/components/EventList';
-import { useAuth } from "@clerk/nextjs";
-import { FaUsers, FaCalendarAlt, FaPlus, FaEnvelope, FaCreditCard } from 'react-icons/fa';
-import Link from 'next/link';
+
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { FaUsers, FaCalendarAlt, FaTicketAlt, FaChartBar, FaCog, FaPlus, FaEdit, FaTrash, FaEye, FaCalendarCheck, FaTimes, FaSearch, FaFilter, FaSort, FaEnvelope, FaCreditCard } from 'react-icons/fa';
+import type { EventDetailsDTO, EventTypeDetailsDTO, EventCalendarEntryDTO } from '@/types';
+import { EventList } from '@/components/EventList';
 import {
   fetchEventsFilteredServer,
   fetchEventTypesServer,
@@ -14,9 +14,7 @@ import {
   deleteCalendarEventForEventServer,
 } from './ApiServerActions';
 
-
 export default function AdminPage() {
-  const { userId } = useAuth();
   const router = useRouter();
   const [events, setEvents] = useState<EventDetailsDTO[]>([]);
   const [eventTypes, setEventTypes] = useState<EventTypeDetailsDTO[]>([]);
@@ -94,14 +92,6 @@ export default function AdminPage() {
   }
   function handleNextPage() {
     setPage((p) => p + 1);
-  }
-
-  if (!userId) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p>Loading...</p>
-      </div>
-    );
   }
 
   return (

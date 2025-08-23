@@ -1,4 +1,3 @@
-import { auth } from "@clerk/nextjs";
 import { NextResponse } from 'next/server';
 import { redirect } from "next/navigation";
 import { DashboardContent } from "@/components/DashboardContent";
@@ -102,12 +101,8 @@ export default async function DashboardPage(props: PageProps) {
     // Await searchParams if it is a Promise (Next.js dynamic API)
     const searchParams = await Promise.resolve(props.searchParams);
 
-    const session = await auth();
-    const userId = session?.userId;
-
-    if (!userId) {
-      redirect('/sign-in');
-    }
+    // Since no authentication is required, we can use a mock userId
+    const userId = 'guest-user';
 
     // Get search params
     const success = searchParams?.success;
@@ -143,7 +138,8 @@ export default async function DashboardPage(props: PageProps) {
       if (isReturnFromStripe) {
         pendingSubscription = true;
       } else if (!userProfileError) {
-        redirect('/pricing?message=subscription-required');
+        // Don't redirect, just continue without subscription
+        pendingSubscription = false;
       }
     }
 

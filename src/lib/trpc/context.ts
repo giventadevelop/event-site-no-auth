@@ -1,10 +1,6 @@
-import { getUserAuth } from "@/lib/auth/utils";
-
 export async function createTRPCContext(opts: { headers: Headers }) {
-  const { session } = await getUserAuth();
-
   return {
-    session: session,
+    session: null, // No authentication required
     ...opts,
   };
 }

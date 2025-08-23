@@ -1,5 +1,3 @@
-import { auth } from '@clerk/nextjs/server';
-import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { FaCheckCircle, FaArrowLeft, FaHome } from 'react-icons/fa';
 
@@ -8,12 +6,6 @@ export default async function TestStripeSuccessPage({
 }: {
   searchParams: { session_id?: string };
 }) {
-  const { userId } = await auth();
-
-  if (!userId) {
-    redirect('/sign-in');
-  }
-
   const sessionId = searchParams.session_id;
 
   return (

@@ -1,6 +1,5 @@
-import { NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs";
-import Stripe from "stripe";
+import { NextResponse } from 'next/server';
+import Stripe from 'stripe';
 import { getAppUrl } from '@/lib/env';
 
 // Force Node.js runtime - Edge runtime is not compatible with Prisma
@@ -19,15 +18,9 @@ const getStripe = () => {
 
 export async function POST(req: Request) {
   try {
-    const { userId } = auth();
+    // Since no authentication is required, we can use a mock userId
+    const userId = 'guest-user';
     const stripe = getStripe(); // Initialize Stripe only when needed
-
-    if (!userId) {
-      return NextResponse.json(
-        { error: "Unauthorized - Please sign in" },
-        { status: 401 }
-      );
-    }
 
     const body = await req.json();
 

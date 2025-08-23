@@ -6,7 +6,6 @@ import {
   FaMoneyBillWave, FaInfoCircle, FaReceipt, FaMapMarkerAlt, FaClock, FaMapPin
 } from 'react-icons/fa';
 import { notFound, redirect } from 'next/navigation';
-import { auth } from '@clerk/nextjs/server';
 import Image from 'next/image';
 import { formatInTimeZone } from 'date-fns-tz';
 import { Suspense } from 'react';
