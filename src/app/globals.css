@@ -78,6 +78,29 @@
 
 /* Add custom styles from HTML template, refactored for Tailwind and deduplicated */
 
+/* Mobile menu overlay with custom width for small screens */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+@media (max-width: 640px) {
+  .mobile-menu-overlay {
+    width: 909px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu-overlay {
+    display: none;
+  }
+}
+
 .hero-section {
   position: relative;
   min-height: 60vh;
