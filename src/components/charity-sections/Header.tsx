@@ -180,14 +180,13 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                       className={`
                         relative flex items-center space-x-1 font-inter
                         text-base lg:text-base font-medium tracking-wide
-                        px-3 py-2 mx-1 rounded-lg
+                        px-3 py-2 mx-1
                         transition-all duration-300 ease-in-out
                         focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
-                        hover:scale-105 active:scale-98 active:transition-transform active:duration-150
                         ${
                           item.active
-                            ? 'text-blue-600 font-semibold bg-blue-50 border-b-2 border-blue-600'
-                            : 'text-gray-600 font-medium hover:text-gray-900 hover:bg-gray-50 hover:font-semibold'
+                            ? 'text-blue-400 font-semibold border-b-2 border-blue-400'
+                            : 'text-blue-400 font-medium hover:text-blue-500 hover:font-semibold border-b-2 border-transparent hover:border-blue-400'
                         }
                       `}
                       onClick={(e) => handleSmoothScroll(e, item.href)}
