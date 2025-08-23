@@ -474,12 +474,12 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
 
             {/* Mobile Menu Actions */}
             <div className="px-6 mt-8 space-y-3">
-              <button 
+              <button
                 className="
                   w-full py-4 px-6 min-h-[44px] rounded-xl
                   font-inter font-semibold text-base tracking-[0.025em]
                   bg-blue-600 hover:bg-blue-700 text-white
-                  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+                  focus:outline-none
                   transition-all duration-300 ease-in-out
                   hover:scale-105 active:scale-98 hover:shadow-lg
                 "
@@ -487,13 +487,13 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
               >
                 Donate
               </button>
-              <button 
+              <button
                 className="
                   w-full py-4 px-6 min-h-[44px] rounded-xl
                   font-inter font-medium text-base tracking-[0.025em]
                   border-2 border-gray-200 text-gray-600 hover:text-gray-900
                   hover:bg-gray-50 hover:border-gray-300 hover:font-semibold
-                  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+                  focus:outline-none
                   transition-all duration-300 ease-in-out
                   active:scale-98 flex items-center justify-center space-x-2
                 "
