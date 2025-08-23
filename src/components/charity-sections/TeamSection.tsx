@@ -6,27 +6,24 @@ import ArrowRightIcon from './icons/ArrowRightIcon';
 const teamMembers = [
   {
     id: 1,
-    name: 'Ivan Schevcenko',
-    role: 'Volunteer',
-    image: '/charity-theme/images/team-ivan.jpg',
-    action: 'Pray',
-    color: '#37E085'
+    name: 'Ivan Petrov',
+    role: 'Founder & CEO',
+    image: '/images/team-ivan.jpg',
+    bio: 'Passionate about making a difference in communities worldwide.'
   },
   {
     id: 2,
-    name: 'Denis Klopotenko',
-    role: 'Volunteer',
-    image: '/charity-theme/images/team-denis.jpg',
-    action: 'Donate',
-    color: '#318FFF'
+    name: 'Denis Kovalenko',
+    role: 'Operations Director',
+    image: '/images/team-denis.jpg',
+    bio: 'Expert in managing humanitarian projects and team coordination.'
   },
   {
     id: 3,
-    name: 'Dmytro Kravchenko',
-    role: 'Volunteer',
-    image: '/charity-theme/images/team-dmytro.jpg',
-    action: 'Volunteer',
-    color: '#FFCE59'
+    name: 'Dmytro Shevchenko',
+    role: 'Program Manager',
+    image: '/images/team-dmytro.jpg',
+    bio: 'Specialized in educational and healthcare program development.'
   }
 ];
 
@@ -66,15 +63,7 @@ const TeamSection: React.FC = () => {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 pb-4 text-white">
                   <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                   <p className="text-white/80 mb-3">{member.role}</p>
-                  <button
-                    className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-in-out"
-                    style={{
-                      backgroundColor: member.color,
-                      color: 'white'
-                    }}
-                  >
-                    {member.action}
-                  </button>
+                  <p className="text-white/90 text-sm">{member.bio}</p>
                 </div>
               </div>
             </div>

@@ -6,36 +6,30 @@ import ArrowRightIcon from './icons/ArrowRightIcon';
 const causes = [
   {
     id: 1,
-    category: 'Health',
-    title: 'Water cleaning in Uganda',
-    description: 'Pink salmon cherry salmon combtail gourami frigate mackerel snake.',
-    image: '/charity-theme/images/cause-water.jpg',
-    goal: 1030000,
-    pledged: 100000,
-    progress: 100,
-    categoryColor: '#34BDC6'
+    title: 'Clean Water Access',
+    description: 'Providing clean drinking water to communities in need through sustainable infrastructure projects.',
+    image: '/images/cause-water.jpg',
+    progress: 75,
+    raised: 45000,
+    goal: 60000
   },
   {
     id: 2,
-    category: 'Medicine',
-    title: 'Health medicine for children',
-    description: 'Michog paradise fish! Triggerfish bango guppy opah sunfish bluntnose',
-    image: '/charity-theme/images/cause-health.jpg',
-    goal: 1070000,
-    pledged: 100000,
-    progress: 100,
-    categoryColor: '#FF8159'
+    title: 'Healthcare Support',
+    description: 'Improving healthcare access and medical facilities in underserved areas.',
+    image: '/images/cause-health.jpg',
+    progress: 60,
+    raised: 32000,
+    goal: 55000
   },
   {
     id: 3,
-    category: 'Education',
-    title: 'We build school',
-    description: 'Cobia spookfish convict cichlid cat shark saw shark trout cod',
-    image: '/charity-theme/images/cause-education.jpg',
-    goal: 1030000,
-    pledged: 100000,
-    progress: 100,
-    categoryColor: '#FFCE59'
+    title: 'Education for All',
+    description: 'Building schools and providing educational resources to children in rural communities.',
+    image: '/images/cause-education.jpg',
+    progress: 85,
+    raised: 68000,
+    goal: 80000
   }
 ];
 
@@ -72,12 +66,6 @@ const CausesSection: React.FC = () => {
                   alt={cause.title}
                   className="w-full h-48 object-cover"
                 />
-                <div
-                  className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium text-white"
-                  style={{ backgroundColor: cause.categoryColor }}
-                >
-                  {cause.category}
-                </div>
               </div>
 
               <div className="p-6">
@@ -105,11 +93,11 @@ const CausesSection: React.FC = () => {
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <p className="text-sm text-gray-600">Goal</p>
-                    <p className="font-semibold text-gray-900">${cause.goal.toLocaleString()}</p>
+                    <p className="font-semibold text-gray-900">${cause.goal?.toLocaleString() || '0'}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Pledged</p>
-                    <p className="font-semibold text-gray-900">${cause.pledged.toLocaleString()}</p>
+                    <p className="text-sm text-gray-600">Raised</p>
+                    <p className="font-semibold text-gray-900">${cause.raised?.toLocaleString() || '0'}</p>
                   </div>
                 </div>
 
