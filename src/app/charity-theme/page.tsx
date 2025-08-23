@@ -2,7 +2,6 @@
 
 import React from 'react';
 import HeroSection from '../../components/charity-sections/HeroSection';
-import MissionSection from '../../components/charity-sections/MissionSection';
 import ServicesSection from '../../components/charity-sections/ServicesSection';
 import StatsSection from '../../components/charity-sections/StatsSection';
 import AboutSection from '../../components/charity-sections/AboutSection';
@@ -17,7 +16,6 @@ export default function CharityWebsite() {
   return (
     <main className="charity-theme-layout">
       <HeroSection />
-      <MissionSection />
       <ServicesSection />
       <StatsSection />
       <AboutSection />
