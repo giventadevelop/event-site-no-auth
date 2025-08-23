@@ -298,28 +298,31 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                   className="transition-all duration-300 ease-in-out"
                   aria-hidden="true"
                 >
-                  <path
-                    d="M3 4C3 3.5 3.5 3 4 3H20C20.5 3 21 3.5 21 4C21 4.5 20.5 5 20 5H4C3.5 5 3 4.5 3 4Z"
+                  {/* Top bar - medium length */}
+                  <rect
+                    x="4"
+                    y="6"
+                    width="12"
+                    height="2"
+                    rx="1"
                     fill="currentColor"
                   />
-                  <path
-                    d="M3 7.5C3 7 3.5 6.5 4 6.5H20C20.5 6.5 21 7 21 7.5C21 8 20.5 8.5 20 8.5H4C3.5 8.5 3 8 3 7.5Z"
+                  {/* Middle bar - full length */}
+                  <rect
+                    x="4"
+                    y="11"
+                    width="16"
+                    height="2"
+                    rx="1"
                     fill="currentColor"
                   />
-                  <path
-                    d="M4 10C3.5 10 3 10.5 3 11C3 11.5 3.5 12 4 12H20C20.5 12 21 11.5 21 11C21 10.5 20.5 10 20 10H4Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M3 14.5C3 14 3.5 13.5 4 13.5H20C20.5 13.5 21 14 21 14.5C21 15 20.5 15.5 20 15.5H4C3.5 15.5 3 15 3 14.5Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M4 17C3.5 17 3 17.5 3 18C3 18.5 3.5 19 4 19H20C20.5 19 21 18.5 21 18C21 17.5 20.5 17 20 17H4Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M3 21.5C3 21 3.5 20.5 4 20.5H20C20.5 20.5 21 21 21 21.5C21 22 20.5 22.5 20 22.5H4C3.5 22.5 3 22 3 21.5Z"
+                  {/* Bottom bar - short length */}
+                  <rect
+                    x="4"
+                    y="16"
+                    width="8"
+                    height="2"
+                    rx="1"
                     fill="currentColor"
                   />
                 </svg>
