@@ -5,7 +5,17 @@ import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="min-h-[50vh] bg-gradient-to-br from-gray-50 to-white py-12">
+    <div className="min-h-[50vh] bg-gradient-to-br from-gray-50 to-white py-12 relative">
+      {/* Big Donate Button - Top Right Corner */}
+      <div className="absolute top-4 right-4 z-50">
+        <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 ease-out flex items-center space-x-3 text-lg font-semibold">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span>DONATE NOW</span>
+        </button>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Grid Layout - 3 cells with soft translucent effects */}
         <div className="grid grid-cols-2 gap-8 h-full min-h-[400px]">
