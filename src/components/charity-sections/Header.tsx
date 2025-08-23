@@ -397,7 +397,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
                           font-inter text-base font-medium tracking-[0.025em]
                           py-4 px-4 min-h-[44px] rounded-xl
                           text-blue-400 hover:text-blue-500 hover:font-semibold
-                          focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+                          focus:outline-none
                           transition-all duration-300 ease-in-out
                         "
                         aria-expanded={openDropdowns.has(item.name)}
