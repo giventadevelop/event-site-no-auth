@@ -91,8 +91,8 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Cell 3: Soft Gradient Image (Bottom Left) */}
-          <div className="relative overflow-hidden group">
+          {/* Cell 3: Soft Gradient Image */}
+          <div className="relative overflow-hidden group min-h-[300px]">
             {/* Soft translucent background */}
             <div
               className="absolute inset-0 rounded-[2rem]"
