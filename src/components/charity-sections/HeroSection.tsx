@@ -89,7 +89,7 @@ const HeroSection: React.FC = () => {
             <div className="absolute inset-0 rounded-[2rem] shadow-xl shadow-purple-200/40"></div>
 
             <div className="relative z-10 p-8 h-full flex items-end">
-              <div className="bg-white/90 backdrop-blur-sm p-5 rounded-xl shadow-md w-full">
+              <div className="bg-white/90 hero-soft-blur hero-translucent-border p-5 rounded-xl w-full">
                 <h4 className="text-lg font-semibold text-gray-800 mb-2">
                   Artistic Expression
                 </h4>
