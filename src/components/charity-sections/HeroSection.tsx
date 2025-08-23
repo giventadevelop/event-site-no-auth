@@ -62,7 +62,7 @@ const HeroSection: React.FC = () => {
             <div className="absolute inset-0 rounded-[2rem] shadow-2xl shadow-gray-300/30"></div>
 
             <div className="relative z-10 p-8 h-full flex items-end">
-              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+              <div className="bg-white/95 hero-soft-blur hero-translucent-border p-6 rounded-2xl">
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">Modern Vision</h3>
                 <p className="text-gray-700">
                   Embracing contemporary design and innovation in cultural celebration
