@@ -329,7 +329,7 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden w-[909px] sm:w-full"
+          className="fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-50 z-40 lg:hidden w-[909px] sm:w-full"
           onClick={closeMobileMenu}
         />
       )}
