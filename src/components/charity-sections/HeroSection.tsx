@@ -7,12 +7,26 @@ const HeroSection: React.FC = () => {
   return (
     <div className="min-h-[50vh] bg-gradient-to-br from-gray-50 to-white py-12 relative">
       {/* Big Donate Button - Top Right Corner */}
-      <div className="absolute top-4 right-4 z-50">
-        <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 ease-out flex items-center space-x-3 text-lg font-semibold">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
-          <span>DONATE NOW</span>
+      <div className="absolute top-6 right-6 z-50">
+        <button className="relative bg-gradient-to-r from-orange-500 to-orange-600 text-white border-3 border-orange-300/50 rounded-full px-12 py-5 text-xl font-bold hover:from-orange-600 hover:to-orange-700 hover:-translate-y-2 hover:shadow-2xl hover:scale-105 transition-all duration-400 ease-out flex items-center space-x-4 group overflow-hidden">
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-full"></div>
+
+          {/* Sparkle animation overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+
+          {/* Gift/Donation Icon */}
+          <div className="relative z-10">
+            <svg className="w-8 h-8 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8c-1.657 0-3-.895-3-2s1.343-2 3-2 3 .895 3 2-1.343 2-3 2z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v13l4-4m-4 4l-4-4" />
+            </svg>
+          </div>
+
+          <span className="relative z-10 tracking-wide">DONATE NOW</span>
+
+          {/* Pulse effect */}
+          <div className="absolute inset-0 rounded-full bg-orange-400/30 animate-ping"></div>
         </button>
       </div>
 
