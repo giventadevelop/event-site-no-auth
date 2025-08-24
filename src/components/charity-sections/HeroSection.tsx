@@ -21,8 +21,8 @@ const HeroSection: React.FC = () => {
         {/* Grid Layout - Mobile: First column cells side by side, second column below; Desktop: custom columns */}
         <div className="grid gap-8 h-full min-h-[400px]">
 
-          {/* Mobile layout: First column cell */}
-          <div className="grid grid-cols-1 gap-4 lg:hidden">
+          {/* Mobile layout: First column cells in same row */}
+          <div className="grid grid-cols-2 gap-4 lg:hidden">
             {/* Cell 1: Logo - Simple image and text */}
             <div className="relative overflow-hidden group min-h-[250px] flex flex-col items-center justify-center p-4">
               <Image
@@ -41,6 +41,27 @@ const HeroSection: React.FC = () => {
               </p>
             </div>
 
+            {/* Cell 3: Unite India Image - No text overlay */}
+            <div className="relative overflow-hidden group min-h-[250px] rounded-[2rem]">
+              <div
+                className="absolute inset-0 rounded-[2rem]"
+                style={{
+                  background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F7e04d4cf965b47f9b58322797a9f4ba2?format=webp&width=800') center/cover`,
+                  filter: 'brightness(0.9) contrast(1.1)'
+                }}
+              ></div>
+            </div>
+
+            {/* Cell 3: Unite India Image - No text overlay */}
+            <div className="relative overflow-hidden group min-h-[300px] rounded-[2rem]">
+              <div
+                className="absolute inset-0 rounded-[2rem]"
+                style={{
+                  background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F7e04d4cf965b47f9b58322797a9f4ba2?format=webp&width=800') center/cover`,
+                  filter: 'brightness(0.9) contrast(1.1)'
+                }}
+              ></div>
+            </div>
           </div>
 
           {/* Cell 2: Large Modern Image - Mobile */}
@@ -79,7 +100,7 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Cell 2: Large Modern Image - No text overlay */}
-            <div className="relative overflow-hidden group min-h-[400px] rounded-[2rem]">
+            <div className="relative overflow-hidden lg:row-span-2 group min-h-[400px] rounded-[2rem]">
               <Image
                 src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F462496732f2546ad8213bf0fbf17fc23?format=webp&width=800"
                 alt="Kerala Cultural Collage"
