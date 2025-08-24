@@ -58,7 +58,7 @@ const HeroSection: React.FC = () => {
             <div
               className="absolute inset-0 rounded-[2rem]"
               style={{
-                background: `url('https://images.pexels.com/photos/8386366/pexels-photo-8386366.jpeg') center/cover`,
+                background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F462496732f2546ad8213bf0fbf17fc23?format=webp&width=800') center/cover`,
                 filter: 'contrast(1.1) saturate(0.9)'
               }}
             ></div>
@@ -90,7 +90,7 @@ const HeroSection: React.FC = () => {
               <div
                 className="absolute inset-0 rounded-[2rem]"
                 style={{
-                  background: `url('https://images.pexels.com/photos/8386366/pexels-photo-8386366.jpeg') center/cover`,
+                  background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F462496732f2546ad8213bf0fbf17fc23?format=webp&width=800') center/cover`,
                   filter: 'contrast(1.1) saturate(0.9)'
                 }}
               ></div>
