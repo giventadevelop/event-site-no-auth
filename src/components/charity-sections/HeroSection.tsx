@@ -55,13 +55,16 @@ const HeroSection: React.FC = () => {
 
           {/* Cell 2: Large Modern Image - Mobile */}
           <div className="relative overflow-hidden group min-h-[300px] rounded-[2rem] lg:hidden">
-            <div
-              className="absolute inset-0 rounded-[2rem]"
+            <Image
+              src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F462496732f2546ad8213bf0fbf17fc23?format=webp&width=800"
+              alt="Kerala Cultural Collage"
+              fill
+              className="object-contain rounded-[2rem]"
               style={{
-                background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F462496732f2546ad8213bf0fbf17fc23?format=webp&width=800') center/contain`, backgroundRepeat: 'no-repeat',
                 filter: 'contrast(1.1) saturate(0.9)'
               }}
-            ></div>
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
 
           {/* Desktop layout: Original grid with modifications */}
