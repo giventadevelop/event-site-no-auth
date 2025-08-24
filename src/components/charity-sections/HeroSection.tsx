@@ -79,7 +79,7 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Cell 2: Large Modern Image - No text overlay */}
-            <div className="relative overflow-hidden lg:row-span-2 group min-h-[400px] rounded-[2rem]">
+            <div className="relative overflow-hidden group min-h-[400px] rounded-[2rem]">
               <Image
                 src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F462496732f2546ad8213bf0fbf17fc23?format=webp&width=800"
                 alt="Kerala Cultural Collage"
