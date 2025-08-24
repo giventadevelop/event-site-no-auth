@@ -69,7 +69,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Desktop layout: Original grid with modifications */}
-          <div className="hidden lg:grid lg:grid-cols-[3fr_5fr] gap-8">
+          <div className="hidden lg:grid lg:grid-cols-2 gap-8">
 
             {/* Cell 1: Logo - Simple image and text */}
             <div className="relative overflow-hidden group min-h-[300px] flex flex-col items-center justify-center">
