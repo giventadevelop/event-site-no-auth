@@ -32,8 +32,8 @@ const AboutSection: React.FC = () => {
                 <p className="text-gray-600">About foundation</p>
               </div>
 
-              <h2 className="text-4xl md:text-6xl font-normal leading-tight tracking-tight mb-8">
-                malayalees.us
+              <h2 className="text-4xl md:text-6xl font-normal leading-tight tracking-tight mb-8 text-blue-600">
+                Preserve and promote the rich cultural heritage of Kerala
               </h2>
             </div>
 
