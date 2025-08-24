@@ -27,8 +27,8 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Grid Layout - Responsive: 1 column on mobile/tablet, 2 columns on desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full min-h-[400px]">
+        {/* Grid Layout - Responsive: 1 column on mobile/tablet, custom columns on desktop */}
+        <div className="grid grid-cols-1 gap-8 h-full min-h-[400px] lg:grid-cols-[3fr_5fr]">
 
           {/* Cell 1: Logo with Soft Background */}
           <div className="relative overflow-hidden group min-h-[300px]">
