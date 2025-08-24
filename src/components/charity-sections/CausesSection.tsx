@@ -64,9 +64,6 @@ const CausesSection: React.FC = () => {
                 </p>
 
 
-                <button className="w-full bg-transparent text-gray-900 border border-yellow-400 rounded-full py-2 text-sm font-medium hover:bg-yellow-400 hover:text-white transition-all duration-300 ease-in-out">
-                  Donate
-                </button>
               </div>
             </div>
           ))}
