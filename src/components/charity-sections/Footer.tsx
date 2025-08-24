@@ -62,22 +62,22 @@ const BackToTopButton = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="pt-16 pb-12">
+    <footer className="bg-gray-900 text-gray-300 footer-edge-to-edge mt-20">
+      {/* Main Footer Content */}
+      <div className="w-full bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
             {/* Column 1: Logo and Social Media */}
             <div className="lg:col-span-1">
               <Link href="/charity-theme" className="inline-block mb-6">
                 <Image
-                  src="/images/charity-theme/logo_white.png"
-                  alt="Charity Organization Logo"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2Fd7543f582d4f477599d341da96d48e2b?format=webp&width=800"
+                  alt="Malayalees Friends Logo"
                   width={150}
-                  height={32}
+                  height={150}
                   priority
-                  className="h-8 w-auto"
+                  className="h-12 w-auto"
                 />
               </Link>
               
@@ -306,9 +306,11 @@ const Footer = () => {
 
           </div>
         </div>
+      </div>
 
-        {/* Copyright Section */}
-        <div className="border-t border-gray-800 py-8">
+      {/* Copyright Section */}
+      <div className="bg-gray-900 border-t border-gray-800 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 font-inter text-sm text-center md:text-left">
               © 2024{' '}
