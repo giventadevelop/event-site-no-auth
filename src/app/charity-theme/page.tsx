@@ -10,7 +10,6 @@ import TeamSection from '../../components/charity-sections/TeamSection';
 import ProjectsSection from '../../components/charity-sections/ProjectsSection';
 import TestimonialsSection from '../../components/charity-sections/TestimonialsSection';
 import EventsSection from '../../components/charity-sections/EventsSection';
-import BrandSection from '../../components/charity-sections/BrandSection';
 
 export default function CharityWebsite() {
   return (
@@ -24,7 +23,6 @@ export default function CharityWebsite() {
       <ProjectsSection />
       <TestimonialsSection />
       <EventsSection />
-      <BrandSection />
       {/* Spacer section for clear separation before footer */}
       <div className="py-24 bg-white"></div>
     </main>
