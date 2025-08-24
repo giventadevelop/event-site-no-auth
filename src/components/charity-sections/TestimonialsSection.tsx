@@ -28,7 +28,6 @@ const TestimonialsSection: React.FC = () => {
                 Halosaur duckbilled barracudina, goosefish gar pleco, chum salmon armoured catfish gudgeon
                 sawfish whitefish orbicular batfish mummichog paradise fish! Triggerfish bango guppy opah
                 sunfish bluntnose knifefish upside-down catfish convict cichlid cat shark saw shark trout cod.
-                Pink salmon cherry salmon combtail gourami frigate mackerel snake.
               </p>
 
               <div className="flex items-center space-x-4">
