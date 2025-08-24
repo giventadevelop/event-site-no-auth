@@ -110,11 +110,11 @@ const HeroSection: React.FC = () => {
 
             <div className="relative z-10 p-8 h-full flex items-end">
               <div className="bg-white/90 hero-soft-blur hero-translucent-border p-5 rounded-xl w-full">
-                <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                  Artistic Expression
+                <h4 className="text-lg font-semibold text-purple-800 mb-2">
+                  Unite India
                 </h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Celebrating creativity through soft, contemporary visual narratives that inspire and connect communities.
+                  Building bridges across communities through cultural exchange and meaningful connections.
                 </p>
               </div>
             </div>
