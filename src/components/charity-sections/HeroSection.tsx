@@ -27,46 +27,43 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Grid Layout - Responsive: 1 column on mobile/tablet, custom columns on desktop */}
-        <div className="grid grid-cols-1 gap-8 h-full min-h-[400px] lg:grid-cols-[3fr_5fr]">
+        {/* Grid Layout - Mobile: First column cells side by side, second column below; Desktop: custom columns */}
+        <div className="grid gap-8 h-full min-h-[400px]">
 
-          {/* Cell 1: Logo with Soft Background */}
-          <div className="relative overflow-hidden group min-h-[300px]">
-            {/* Translucent background with soft edges */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gray-100/60 backdrop-blur-sm rounded-[2rem] shadow-lg shadow-gray-200/50"></div>
-            <div
-              className="absolute inset-0 opacity-30 rounded-[2rem]"
-              style={{
-                background: `url('https://images.pexels.com/photos/2268551/pexels-photo-2268551.jpeg') center/cover`,
-                filter: 'blur(1px) saturate(0.8)'
-              }}
-            ></div>
+          {/* Mobile layout: First column cells in same row */}
+          <div className="grid grid-cols-2 gap-4 lg:hidden">
+            {/* Cell 1: Logo - Simple image and text */}
+            <div className="relative overflow-hidden group min-h-[250px] flex flex-col items-center justify-center p-4">
+              <Image
+                src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2Fd7543f582d4f477599d341da96d48e2b?format=webp&width=800"
+                alt="Malayalees Friends Logo"
+                width={180}
+                height={180}
+                className="mx-auto mb-3"
+                priority
+              />
+              <h2 className="text-lg font-bold text-gray-800 text-center">
+                Malayalees Friends
+              </h2>
+              <p className="text-sm text-gray-600 mt-1 text-center">
+                Cultural Events Federation
+              </p>
+            </div>
 
-            <div className="relative z-10 p-8 h-full flex items-center justify-center">
-              <div className="text-center">
-                <div className="bg-white/90 hero-soft-blur hero-translucent-border p-8 rounded-2xl">
-                  <Image
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2Fd7543f582d4f477599d341da96d48e2b?format=webp&width=800"
-                    alt="Malayalees Friends Logo"
-                    width={240}
-                    height={240}
-                    className="mx-auto mb-4"
-                    priority
-                  />
-                  <h2 className="text-xl font-bold text-gray-800">
-                    Malayalees Friends
-                  </h2>
-                  <p className="text-base text-gray-600 mt-2">
-                    Cultural Events Federation
-                  </p>
-                </div>
-              </div>
+            {/* Cell 3: Unite India Image - No text overlay */}
+            <div className="relative overflow-hidden group min-h-[250px] rounded-[2rem]">
+              <div
+                className="absolute inset-0 rounded-[2rem]"
+                style={{
+                  background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F7e04d4cf965b47f9b58322797a9f4ba2?format=webp&width=800') center/cover`,
+                  filter: 'brightness(0.9) contrast(1.1)'
+                }}
+              ></div>
             </div>
           </div>
 
-          {/* Cell 2: Large Modern Image (spans 2 rows on desktop, single row on mobile) */}
-          <div className="relative overflow-hidden lg:row-span-2 group min-h-[400px]">
-            {/* Soft translucent container */}
+          {/* Cell 2: Large Modern Image - Mobile */}
+          <div className="relative overflow-hidden group min-h-[300px] rounded-[2rem] lg:hidden">
             <div
               className="absolute inset-0 rounded-[2rem]"
               style={{
@@ -74,49 +71,49 @@ const HeroSection: React.FC = () => {
                 filter: 'contrast(1.1) saturate(0.9)'
               }}
             ></div>
-
-            {/* Soft overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-white/10 rounded-[2rem]"></div>
-
-            {/* Soft edge effect */}
-            <div className="absolute inset-0 rounded-[2rem] shadow-2xl shadow-gray-300/30"></div>
-
-            <div className="relative z-10 p-8 h-full flex items-end">
-              <div className="bg-white/95 hero-soft-blur hero-translucent-border p-6 rounded-2xl">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Modern Vision</h3>
-                <p className="text-gray-700">
-                  Embracing contemporary design and innovation in cultural celebration
-                </p>
-              </div>
-            </div>
           </div>
 
-          {/* Cell 3: Unite India Image */}
-          <div className="relative overflow-hidden group min-h-[300px]">
-            {/* Unite India background image */}
-            <div
-              className="absolute inset-0 rounded-[2rem]"
-              style={{
-                background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F7e04d4cf965b47f9b58322797a9f4ba2?format=webp&width=800') center/cover`,
-                filter: 'brightness(0.9) contrast(1.1)'
-              }}
-            ></div>
+          {/* Desktop layout: Original grid with modifications */}
+          <div className="hidden lg:grid lg:grid-cols-[3fr_5fr] gap-8">
 
-            {/* Gradient overlay for soft effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-white/30 rounded-[2rem]"></div>
+            {/* Cell 1: Logo - Simple image and text */}
+            <div className="relative overflow-hidden group min-h-[300px] flex flex-col items-center justify-center">
+              <Image
+                src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2Fd7543f582d4f477599d341da96d48e2b?format=webp&width=800"
+                alt="Malayalees Friends Logo"
+                width={240}
+                height={240}
+                className="mx-auto mb-4"
+                priority
+              />
+              <h2 className="text-xl font-bold text-gray-800 text-center">
+                Malayalees Friends
+              </h2>
+              <p className="text-base text-gray-600 mt-2 text-center">
+                Cultural Events Federation
+              </p>
+            </div>
 
-            {/* Soft shadow */}
-            <div className="absolute inset-0 rounded-[2rem] shadow-xl shadow-purple-200/40"></div>
+            {/* Cell 2: Large Modern Image - No text overlay */}
+            <div className="relative overflow-hidden lg:row-span-2 group min-h-[400px] rounded-[2rem]">
+              <div
+                className="absolute inset-0 rounded-[2rem]"
+                style={{
+                  background: `url('https://images.pexels.com/photos/8386366/pexels-photo-8386366.jpeg') center/cover`,
+                  filter: 'contrast(1.1) saturate(0.9)'
+                }}
+              ></div>
+            </div>
 
-            <div className="relative z-10 p-8 h-full flex items-end">
-              <div className="bg-white/90 hero-soft-blur hero-translucent-border p-5 rounded-xl w-full">
-                <h4 className="text-lg font-semibold text-purple-800 mb-2">
-                  Unite India
-                </h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Building bridges across communities through cultural exchange and meaningful connections.
-                </p>
-              </div>
+            {/* Cell 3: Unite India Image - No text overlay */}
+            <div className="relative overflow-hidden group min-h-[300px] rounded-[2rem]">
+              <div
+                className="absolute inset-0 rounded-[2rem]"
+                style={{
+                  background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F7e04d4cf965b47f9b58322797a9f4ba2?format=webp&width=800') center/cover`,
+                  filter: 'brightness(0.9) contrast(1.1)'
+                }}
+              ></div>
             </div>
           </div>
         </div>
