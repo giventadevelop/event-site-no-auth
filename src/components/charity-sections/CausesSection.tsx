@@ -26,7 +26,7 @@ const causes = [
     id: 3,
     title: 'Education for All',
     description: 'Building schools and providing educational resources to children in rural communities.',
-    image: 'https://images.pexels.com/photos/448877/pexels-photo-448877.jpeg',
+    image: 'https://images.pexels.com/photos/20556421/pexels-photo-20556421.jpeg',
     progress: 85,
     raised: 68000,
     goal: 80000
