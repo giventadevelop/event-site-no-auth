@@ -7,28 +7,28 @@ const projects = [
     id: 1,
     title: 'Helping in village houses',
     category: 'Building',
-    description: 'Pink salmon cherry salmon combtail gourami frigate mackerel snake.',
+    description: '',
     color: '#37E085'
   },
   {
     id: 2,
-    title: 'Building school in Africa',
+    title: 'Building schools',
     category: 'Building',
-    description: 'Pink salmon cherry salmon combtail gourami frigate mackerel snake.',
+    description: '',
     color: '#FF8159'
   },
   {
     id: 3,
     title: 'Water delivery in hot places',
     category: 'Water',
-    description: 'Pink salmon cherry salmon combtail gourami frigate mackerel snake.',
+    description: '',
     color: '#34BDC6'
   },
   {
     id: 4,
     title: 'Help with education',
     category: 'Education',
-    description: 'Pink salmon cherry salmon combtail gourami frigate mackerel snake.',
+    description: '',
     color: '#FFCE59'
   }
 ];
