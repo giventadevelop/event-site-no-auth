@@ -69,7 +69,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Desktop layout: Original grid with modifications */}
-          <div className="hidden lg:grid lg:grid-cols-2 gap-8">
+          <div className="hidden lg:grid lg:grid-cols-[3fr_7fr] gap-8">
 
             {/* Cell 1: Logo - Simple image and text */}
             <div className="relative overflow-hidden group min-h-[300px] flex flex-col items-center justify-center">
@@ -95,7 +95,7 @@ const HeroSection: React.FC = () => {
                 src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F3371c83f14b645e59702e7e2aefc861e?format=webp&width=800"
                 alt="Kerala Cultural Collage"
                 fill
-                className="object-cover object-center"
+                className="object-contain"
                 style={{
                   filter: 'contrast(1.1) saturate(0.9)'
                 }}
