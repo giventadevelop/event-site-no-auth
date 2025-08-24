@@ -91,14 +91,14 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Cell 3: Soft Gradient Image */}
+          {/* Cell 3: Unite India Image */}
           <div className="relative overflow-hidden group min-h-[300px]">
-            {/* Soft translucent background */}
+            {/* Unite India background image */}
             <div
               className="absolute inset-0 rounded-[2rem]"
               style={{
-                background: `url('https://images.pexels.com/photos/11280357/pexels-photo-11280357.jpeg') center/cover`,
-                filter: 'blur(0.5px) saturate(0.7) brightness(1.1)'
+                background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F7e04d4cf965b47f9b58322797a9f4ba2?format=webp&width=800') center/cover`,
+                filter: 'brightness(0.9) contrast(1.1)'
               }}
             ></div>
 
