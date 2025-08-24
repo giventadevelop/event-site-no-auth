@@ -7,20 +7,20 @@ import ArrowRightIcon from './icons/ArrowRightIcon';
 const teamMembers = [
   {
     id: 1,
-    name: 'Ivan Petrov',
+    name: 'Manoj Kizhakkoot',
     role: 'Founder & CEO',
-    image: '/images/team-ivan.jpg',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F57d70c7941ba477fb3556ff7aab11f52?format=webp&width=800',
     bio: 'Passionate about making a difference in communities worldwide.',
-    email: 'ivan@malayalees.org',
+    email: 'manoj@malayalees.org',
     expertise: ['Strategic Planning', 'Community Building', 'Cultural Events']
   },
   {
     id: 2,
-    name: 'Denis Kovalenko',
+    name: 'SRK',
     role: 'Operations Director',
-    image: '/images/team-denis.jpg',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F386c7018a4a04c2b8dad6cbfc907b952?format=webp&width=800',
     bio: 'Expert in managing humanitarian projects and team coordination.',
-    email: 'denis@malayalees.org',
+    email: 'srk@malayalees.org',
     expertise: ['Project Management', 'Operations', 'Team Leadership']
   },
   {
