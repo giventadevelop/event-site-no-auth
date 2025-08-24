@@ -10,18 +10,6 @@ const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row space-y-12 lg:space-y-0 lg:space-x-16 items-start">
 
-          {/* Left Side - Image Only (Clean Portrait) */}
-          <div className="flex-1 lg:max-w-md">
-            <div className="relative">
-              <Image
-                src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F65153e294c1f4d929d42d289254cfd9e?format=webp&width=800"
-                alt="Kerala Cultural Heritage"
-                width={400}
-                height={600}
-                className="w-full h-auto rounded-2xl shadow-2xl object-cover"
-              />
-            </div>
-          </div>
 
           {/* Right Side - Content */}
           <div className="flex-1">
