@@ -321,14 +321,14 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
-            <Image
-              src="/images/charity-theme/logo_black.png"
-              alt="Charity Logo"
-              width={120}
-              height={24}
-              priority
-              className="h-6 w-auto"
-            />
+            <div className="text-left">
+              <div className="text-lg font-bold text-purple-600 leading-tight">
+                Unite India
+              </div>
+              <div className="text-[10px] font-medium text-purple-500 uppercase tracking-wider">
+                A NONPROFIT CORPORATION
+              </div>
+            </div>
             <button
               onClick={closeMobileMenu}
               className="
