@@ -72,7 +72,7 @@ const HeroSection: React.FC = () => {
           <div className="hidden lg:grid lg:grid-cols-[3fr_7fr] gap-8">
 
             {/* Cell 1: Logo - Simple image and text */}
-            <div className="relative overflow-hidden group min-h-[300px] flex flex-col items-center justify-center">
+            <div className="relative overflow-hidden group h-[350px] flex flex-col items-center justify-center">
               <Image
                 src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2Fd7543f582d4f477599d341da96d48e2b?format=webp&width=800"
                 alt="Malayalees Friends Logo"
@@ -104,7 +104,7 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Cell 3: Unite India Image - No text overlay */}
-            <div className="relative overflow-hidden group min-h-[300px] rounded-[2rem]">
+            <div className="relative overflow-hidden group h-[350px] rounded-[2rem]">
               <div
                 className="absolute inset-0 rounded-[2rem]"
                 style={{
