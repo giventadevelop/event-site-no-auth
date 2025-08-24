@@ -132,41 +132,17 @@ export default function Header({ hideMenuItems = false, variant = 'charity' }: H
       <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Left side - Grid button and Logo */}
-            <div className="flex items-center space-x-4">
-              <button
-                aria-label="Open side panel"
-                className="
-                  hidden lg:flex items-center justify-center
-                  w-11 h-11 min-w-[44px] min-h-[44px]
-                  font-inter font-medium
-                  text-gray-600 hover:text-gray-900 active:text-blue-600
-                  bg-transparent hover:bg-gray-50 active:bg-gray-100
-                  border-2 border-transparent hover:border-gray-200 active:border-blue-300
-                  rounded-xl
-                  focus:outline-none
-                  transition-all duration-300 ease-in-out
-                  hover:scale-105 active:scale-98
-                  hover:shadow-sm active:shadow-md
-                "
-              >
-                <Grid 
-                  size={20} 
-                  className="transition-all duration-300 ease-in-out"
-                  strokeWidth={2}
-                  aria-hidden="true"
-                />
-              </button>
-              
+            {/* Left side - Unite India Text Logo */}
+            <div className="flex items-center">
               <Link href="/charity-theme" className="flex items-center">
-                <Image
-                  src="/images/charity-theme/logo_black.png"
-                  alt="Charity Logo"
-                  width={140}
-                  height={32}
-                  priority
-                  className="h-8 w-auto"
-                />
+                <div className="text-left">
+                  <div className="text-2xl font-bold text-purple-600 leading-tight">
+                    Unite India
+                  </div>
+                  <div className="text-xs font-medium text-purple-500 uppercase tracking-wider">
+                    A NONPROFIT CORPORATION
+                  </div>
+                </div>
               </Link>
             </div>
 
