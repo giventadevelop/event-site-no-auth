@@ -72,12 +72,12 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <Link href="/charity-theme" className="inline-block mb-6">
                 <Image
-                  src="/images/charity-theme/logo_white.png"
-                  alt="Charity Organization Logo"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2Fd7543f582d4f477599d341da96d48e2b?format=webp&width=800"
+                  alt="Malayalees Friends Logo"
                   width={150}
-                  height={32}
+                  height={150}
                   priority
-                  className="h-8 w-auto"
+                  className="h-12 w-auto"
                 />
               </Link>
               
