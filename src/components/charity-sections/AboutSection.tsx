@@ -1,18 +1,17 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import ArrowRightIcon from './icons/ArrowRightIcon';
 
 const AboutSection: React.FC = () => {
   return (
     <div className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row space-y-12 lg:space-y-0 lg:space-x-16 items-start">
+        <div className="flex flex-col items-start">
 
 
-          {/* Right Side - Content */}
-          <div className="flex-1">
+          {/* Content */}
+          <div className="w-full">
             {/* Section Header */}
             <div className="mb-12">
               <div className="flex items-center space-x-2 mb-4">
