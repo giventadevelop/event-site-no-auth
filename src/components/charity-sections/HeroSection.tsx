@@ -52,16 +52,6 @@ const HeroSection: React.FC = () => {
               ></div>
             </div>
 
-            {/* Cell 3: Unite India Image - No text overlay */}
-            <div className="relative overflow-hidden group min-h-[300px] rounded-[2rem]">
-              <div
-                className="absolute inset-0 rounded-[2rem]"
-                style={{
-                  background: `url('https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F7e04d4cf965b47f9b58322797a9f4ba2?format=webp&width=800') center/cover`,
-                  filter: 'brightness(0.9) contrast(1.1)'
-                }}
-              ></div>
-            </div>
           </div>
 
           {/* Cell 2: Large Modern Image - Mobile */}
