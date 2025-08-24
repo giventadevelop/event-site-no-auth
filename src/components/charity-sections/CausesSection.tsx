@@ -8,7 +8,7 @@ const causes = [
     id: 1,
     title: 'Clean Water Access',
     description: 'Providing clean drinking water to communities in need through sustainable infrastructure projects.',
-    image: '/images/cause-water.jpg',
+    image: 'https://images.pexels.com/photos/28101461/pexels-photo-28101461.jpeg',
     progress: 75,
     raised: 45000,
     goal: 60000
@@ -17,7 +17,7 @@ const causes = [
     id: 2,
     title: 'Healthcare Support',
     description: 'Improving healthcare access and medical facilities in underserved areas.',
-    image: '/images/cause-health.jpg',
+    image: 'https://images.pexels.com/photos/7659565/pexels-photo-7659565.jpeg',
     progress: 60,
     raised: 32000,
     goal: 55000
@@ -26,7 +26,7 @@ const causes = [
     id: 3,
     title: 'Education for All',
     description: 'Building schools and providing educational resources to children in rural communities.',
-    image: '/images/cause-education.jpg',
+    image: 'https://images.pexels.com/photos/8613319/pexels-photo-8613319.jpeg',
     progress: 85,
     raised: 68000,
     goal: 80000
