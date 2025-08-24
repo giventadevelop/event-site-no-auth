@@ -22,15 +22,6 @@ const teamMembers = [
     bio: 'Expert in managing humanitarian projects and team coordination.',
     email: 'srk@malayalees.org',
     expertise: ['Project Management', 'Operations', 'Team Leadership']
-  },
-  {
-    id: 3,
-    name: 'Dmytro Shevchenko',
-    role: 'Program Manager',
-    image: '/images/team-dmytro.jpg',
-    bio: 'Specialized in educational and healthcare program development.',
-    email: 'dmytro@malayalees.org',
-    expertise: ['Program Development', 'Education', 'Healthcare']
   }
 ];
 
