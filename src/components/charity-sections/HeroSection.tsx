@@ -90,12 +90,12 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Cell 2: Large Modern Image - No text overlay */}
-            <div className="relative overflow-hidden lg:row-span-2 group min-h-[620px]">
+            <div className="relative overflow-hidden lg:row-span-2 group h-[700px]">
               <Image
                 src="https://cdn.builder.io/api/v1/image/assets%2Fa70a28525f6f491aaa751610252a199c%2F3371c83f14b645e59702e7e2aefc861e?format=webp&width=800"
                 alt="Kerala Cultural Collage"
                 fill
-                className="object-contain"
+                className="object-contain w-full h-full"
                 style={{
                   filter: 'contrast(1.1) saturate(0.9)'
                 }}
